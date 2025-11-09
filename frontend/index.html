@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Joke App</h1>
+        </header>
+        <main>
+            <section class="search-section">
+                <h2>Find a Joke by ID</h2>
+                <div class="search-bar">
+                    <input type="number" id="jokeId" placeholder="Enter Joke ID" min="1">
+                    <button>Get Joke</button>
+                </div>
+                <div id="singleJoke" class="searchBtn">
+                </div>
+            </section>
+            <section class="all-jokes-section">
+                <h2>View all jokes</h2>
+                <button>Load All Jokes</button>
+                <input type="number" id="loadId" placeholder="The number of jokes">
+                <div id="allJokes" class="jokes-list"></div>
+            </section>
+        </main>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
