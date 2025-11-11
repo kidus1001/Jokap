@@ -1,4 +1,4 @@
-package services
+rpackage services
 
 import (
 	"context"
@@ -14,7 +14,7 @@ import (
 var jokes []models.Joke
 
 func GetJokesAPI(num int) {
-	apiKey := "AIzaSyBjodF7hNP26G47QcOBXTb_M7JzgXoi6vo"
+	apiKey := "Enter your ${API} key here"
 	ctx := context.Background()
 	client, err := genai.NewClient(ctx, &genai.ClientConfig{
 		APIKey: apiKey,
