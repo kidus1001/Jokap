@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"fmt"
-	"jokeapp/models"
 	"jokeapp/services"
 	"net/http"
 	"strconv"
@@ -28,18 +27,26 @@ func GetSpecificJoke(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"Message": "Here are the jokes",
 			"data":    response})
+		fmt.Println(response)
 	} else {
 		c.JSON(http.StatusNotFound, gin.H{"message": "Error"})
 	}
 }
 
 func GetAllJokes(c *gin.Context) {
-	var req models.JokeRequest
-	if err := c.ShouldBindJSON(&req); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"Error": "Invalid request body"})
+	numStr := c.Query("num")
+	if numStr == "" {
+		c.JSON(http.StatusBadRequest, gin.H{"Error": "Num parameter is required!"})
 		return
 	}
-	jokes, flag := services.GetAllJokes(req.Num)
+
+	num, err := strconv.Atoi(numStr)
+	if err != nil || num <= 0 {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid num parameter"})
+		return
+	}
+
+	jokes, flag := services.GetAllJokes(num)
 	if flag {
 		c.JSON(http.StatusOK, gin.H{
 			"success": true,

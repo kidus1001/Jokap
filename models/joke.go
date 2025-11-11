@@ -6,5 +6,5 @@ type Joke struct {
 }
 
 type JokeRequest struct {
-	Num int `jsoon:"num"`
+	Num int `json:"num"`
 }

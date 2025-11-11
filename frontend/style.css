@@ -1,0 +1,54 @@
+body {
+    background-color: bisque;
+}
+
+#app {
+    background-color: rgb(169, 184, 190);
+    border-radius: 20px;
+}
+
+header {
+    background-color: rgb(163, 203, 209);
+    color: brown;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.search-section, .all-jokes-section{
+    text-align: center;
+    color: rgb(74, 87, 28);
+    height: auto;
+    align-items: center;
+}
+
+.all-jokes-section {
+    background-color: rgb(162, 177, 182);
+    height: auto;
+    border-radius: 20px;
+}
+
+.search-bar button, .all-jokes-section button {
+    color: rgb(134, 8, 8);
+    background-color: rgb(163, 203, 209);
+}
+
+
+#jokeId, #loadId {
+    background-color: rgb(184, 178, 178);
+    color: brown;
+    text-align: center;
+}
+
+#allJokes, #singleJoke {
+    padding: 15px 0;
+    background-color: #b1b8ba;
+    border-radius: 20px;
+}
+
+@media (min-width: 720px) {
+    body, #app {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+}
